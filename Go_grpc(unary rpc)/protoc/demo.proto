@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "./";
+
+
+message Request{
+    repeated string Name  = 1;
+}
+
+message Response{
+    string Name = 1;
+}
+
+
+service Service{
+    rpc ServerReply(Request) returns (Response);
+}
+
