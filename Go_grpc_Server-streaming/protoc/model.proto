@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "./";
+
+
+message Reciever{
+string headlines = 1;
+}
+
+message Request{
+string news = 1;
+}
+
+service NewsModel{
+    rpc TodaysNews(Request) returns ( stream Reciever);
+}
